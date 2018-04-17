@@ -1,0 +1,16 @@
+<div class="col-5 offset-3 mt-4 mb-5">
+  <div class="card">
+    <%= image_tag @creature.avatar.url(:medium), class: "card-img-top img-fluid" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @creature.name %></h5>
+      <p class="card-text"><%= @creature.description %></p>
+      <div class="">
+        <%= button_to "Delete", @creature, method: :delete, data: { confirm: "Are you sure you want to delete #{@creature.name}?" }, class: "btn btn-danger float-right" %>
+        <%= link_to "Edit", edit_creature_path(@creature.id), class: "btn btn-info float-right mr-1" %>
+      </div>
+    </div>
+    <div class="card-footer mt-0">
+      <small class="text-muted">Last updated <%= @creature.updated_at %></small>
+    </div>
+  </div>
+</div>

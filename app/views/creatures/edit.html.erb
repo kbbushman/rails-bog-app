@@ -1,0 +1,19 @@
+<div class="col-9 offset-1 mt-4">
+  <h1>Edit Creature</h1>
+  <%= form_for @creature do |f| %>
+    <div class="form-group mt-4">
+      <%= f.label :avatar, class: "form-control-lg mb-1" %><br />
+      <%= f.file_field :avatar %>
+    </div>
+    <div class="form-group mt-4">
+      <%= f.label :name, class: "form-control-lg mb-1" %><br />
+      <%= f.text_field :name, class: "form-control mb-2" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description, class: "block form-control-lg mb-1" %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+      <%= f.submit "Update Creature", class: "btn btn-info float-right" %>
+      <%= link_to "Cancel", creature_path(@creature.id), class: "btn btn-secondary float-right mr-2" %>
+  <% end %>
+</div>

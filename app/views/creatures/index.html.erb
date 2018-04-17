@@ -1,0 +1,20 @@
+<div class="album mt-4 avatar-home">
+  <div class="container">
+    <div class="row">
+      <% @creatures.each do |creature| %>
+        <div class="col-md-4">
+          <div class="card mb-5">
+            <%= image_tag creature.avatar.url(:medium), class: "card-img-top img-fluid" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= creature.name %></h5>
+              <p class="card-text"><%= creature.description %></p>
+              <div>
+                <%= link_to "View", creature_path(creature.id), class: "btn btn-secondary float-right" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
